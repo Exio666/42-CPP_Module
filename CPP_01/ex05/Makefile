@@ -6,13 +6,12 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 18:02:40 by bsavinel          #+#    #+#              #
-#    Updated: 2022/03/11 18:59:12 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/03/11 19:23:20 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	main.cpp		\
-			Zombie.cpp		\
-			zombieHorde.cpp
+SRCS	=	main.cpp	\
+			Karen.cpp
 
 OBJS	= 	$(SRCS:.cpp=.o)
 
