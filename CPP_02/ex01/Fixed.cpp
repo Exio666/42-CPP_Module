@@ -6,12 +6,14 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:09:48 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/15 19:08:46 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/03/15 19:59:13 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
+#include <math.h>
+#include <cmath>
 
 Fixed::Fixed()
 {
@@ -23,6 +25,56 @@ Fixed::Fixed(const Fixed &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	raw = copy.getRawBits();
+}
+
+Fixed::Fixed(const int nbr)
+{
+	std::cout << "Int constructor called" << std::endl;
+	int i;
+
+	i = 0;
+	raw = nbr;
+	while (i < bits_fracional_part)
+	{
+		raw = raw * 2;
+		i++;
+	}
+	if (nbr < 0 && raw > 0)
+		raw = raw * - 1;
+}
+
+Fixed::Fixed(const float nbr)
+{
+	std::cout << "Float constructor called" << std::endl;
+	int i;
+	float round;
+
+	round = roundf(nbr);
+	if (nbr > 0 && nbr < round)
+		round--;
+	else if (nbr < 0 && nbr > round)
+		round++;
+	raw = round;
+	i = 0;
+	while (i < bits_fracional_part)
+	{
+		raw = raw * 2;
+		i++;
+	}
+	round = fabs(nbr - round);
+	while (round != 0)
+	{
+		round = round * 10;
+		if ()
+	}
+	if (nbr < 0 && raw > 0)
+		raw = raw * - 1;
+}
+
+
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits() const
@@ -37,10 +89,7 @@ void Fixed::setRawBits(int const nbr)
 	raw = nbr;
 }
 
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-}
+
 
 void Fixed::operator=(const Fixed &copy)
 {
