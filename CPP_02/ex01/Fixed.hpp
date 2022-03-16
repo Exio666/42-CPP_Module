@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:08:48 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/15 19:33:14 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/03/16 13:16:23 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class Fixed
 		float toFloat() const;
 		int toInt() const;
 		void operator=(const Fixed &copy);
-		std::string operator<<(const Fixed &fix);
-
 	private:
 		int raw;
 		static const int bits_fracional_part = 8;
 };
+
+std::ostream &operator<<(std::ostream &stream, Fixed const &fixed);
