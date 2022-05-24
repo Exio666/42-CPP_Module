@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:45:58 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/24 14:23:20 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:41:01 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,25 @@ void	PhoneBook::add_contact(int i)
 	do
 	{
 		std::cout << "Last name : ";
-		if (std::getline(std::cin, first_name) == NULL)
+		if (std::getline(std::cin, last_name) == NULL)
 			exit (1);
 	} while (last_name.length() < 1);
 	do
 	{
-		if (std::getline(std::cin, first_name) == NULL)
+		std::cout << "Nickname : ";
+		if (std::getline(std::cin, nickname) == NULL)
 			exit (1);
 	} while (nickname.length() < 1);
 	do
 	{
 		std::cout << "Phone_number : ";
-		if (std::getline(std::cin, first_name) == NULL)
+		if (std::getline(std::cin, phone_number) == NULL)
 			exit (1);
 	} while (phone_number.length() < 1);
 	do
 	{
 		std::cout << "Darkest_secret : ";
-		if (std::getline(std::cin, first_name) == NULL)
+		if (std::getline(std::cin, darkest_secret) == NULL)
 			exit (1);
 	} while (darkest_secret.length() < 1);
 	if (nb_contact < 8)
