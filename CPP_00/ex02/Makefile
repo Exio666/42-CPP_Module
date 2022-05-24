@@ -6,7 +6,7 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/08 15:12:23 by bsavinel          #+#    #+#              #
-#    Updated: 2022/05/24 13:06:04 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/05/24 15:10:06 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,11 @@ SRCS	=	Account.cpp	\
 			tests.cpp
 
 OBJS	= 	$(SRCS:.cpp=.o)
+DEPS	=	$(SRCS:.cpp=.d)
 
 NAME = Account
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
 CC = c++
 
@@ -32,11 +33,13 @@ $(NAME): $(OBJS)
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(DEPS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.-include $(DEPS)
+
+PHONY: all clean fclean re

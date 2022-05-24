@@ -6,7 +6,7 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 18:02:15 by bsavinel          #+#    #+#              #
-#    Updated: 2022/05/24 13:26:28 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/05/24 15:10:03 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,11 @@ SRCS	=	main.cpp		\
 			Zombie.cpp
 
 OBJS	= 	$(SRCS:.cpp=.o)
+DEPS	=	$(SRCS:.cpp=.d)
 
 NAME = Zombie
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
 CC = c++
 
@@ -34,11 +35,13 @@ $(NAME): $(OBJS)
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(DEPS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+-include $(DEPS)
 
 .PHONY: all clean fclean re
