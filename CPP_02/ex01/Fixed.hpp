@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:08:48 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/16 13:16:23 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/24 18:49:46 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ class Fixed
 		Fixed(const int nbr);
 		Fixed(const float nbr);
 		~Fixed();
+		
+		void operator=(const Fixed &copy);
+		
 		int getRawBits() const;
 		void setRawBits(int const raw);
 		float toFloat() const;
 		int toInt() const;
-		void operator=(const Fixed &copy);
+
 	private:
 		int raw;
 		static const int bits_fracional_part = 8;

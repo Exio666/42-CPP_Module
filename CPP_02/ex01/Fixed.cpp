@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:09:48 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/16 15:19:29 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/24 19:32:30 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,7 @@ Fixed::Fixed(const Fixed &copy)
 Fixed::Fixed(const int nbr)
 {
 	std::cout << "Int constructor called" << std::endl;
-	int i;
-
-	i = 0;
-	raw = nbr;
-	while (i < bits_fracional_part)
-	{
-		raw = raw * 2;
-		i++;
-	}
-	if (nbr < 0 && raw > 0)
-		raw = raw * - 1;
+	raw = nbr * (1 << bits_fracional_part);
 }
 
 int take_entier_part(float nbr)
@@ -58,37 +48,7 @@ int take_entier_part(float nbr)
 Fixed::Fixed(const float nbr)
 {
 	std::cout << "Float constructor called" << std::endl;
-	int 	i;
-	/*int 	entier_part;
-	int		float_part;
-	float	pass_virgule;
-	*/float	copy;
-
-	//entier_part = take_entier_part(nbr);
-	i = 0;
-	copy = nbr;
-	while (i < bits_fracional_part + 1)
-	{
-		copy = copy * 2;
-		i++;
-	}
-	raw = take_entier_part(copy);
-	/*while (i < bits_fracional_part)
-	{
-		entier_part = entier_part * 2;
-		i++;
-	}
-	pass_virgule = fabs(nbr - take_entier_part(nbr));
-	i = 0;
-	while(i < bits_fracional_part)
-	{
-		pass_virgule = pass_virgule * 2;
-		i++;
-	}
-	float_part = take_entier_part(pass_virgule);
-	raw = entier_part + float_part;
-	if (nbr < 0 && raw > 0)
-		raw = raw * - 1;*/
+	raw = roundf(nbr * (1 << bits_fracional_part));
 }
 
 Fixed::~Fixed()
@@ -110,32 +70,12 @@ void Fixed::setRawBits(int const nbr)
 
 int Fixed::toInt() const
 {
-	int i;
-	int retour;
-
-	i = 0;
-	retour = raw;
-	while (i < bits_fracional_part + 1)
-	{
-		retour = retour / 2;
-		i++;
-	}
-	return (retour);
+	return raw / (1 << bits_fracional_part);
 }
 
 float Fixed::toFloat() const
 {
-	int i;
-	float retour;
-
-	i = 0;
-	retour = raw;
-	while (i < bits_fracional_part + 1)
-	{
-		retour = retour / 2;
-		i++;
-	}
-	return (retour);
+	return  (float)raw / (float)(1 << bits_fracional_part);
 }
 
 std::ostream &operator<<(std::ostream &os, Fixed const &copy)
