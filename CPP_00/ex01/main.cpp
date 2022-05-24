@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:52:41 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/10 18:56:03 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:17:54 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,16 @@ int	main()
 	while(exit == 0)
 	{
 		std::cout << ">>> ";
-		std::getline(std::cin, instruction);
+		if (std::getline(std::cin, instruction) == NULL)
+			return (1);
 		if (instruction.compare("EXIT") == 0)
 			exit = 1;
 		else if (instruction.compare("SEARCH") == 0)
 		{
 			book.print_phonebook();
 			std::cout << ">>> Do you want see somebody ?";
-			std::getline(std::cin, instruction);
+			if (std::getline(std::cin, instruction) == NULL)
+				return (1);
 			if (instruction.length() == 1)
 			{
 				search = atoi(instruction.c_str()) - 1;

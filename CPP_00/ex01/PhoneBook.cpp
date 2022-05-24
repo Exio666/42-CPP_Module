@@ -6,11 +6,12 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:45:58 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/24 13:00:39 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:20:01 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <stdlib.h> 
 
 PhoneBook::PhoneBook()
 {
@@ -34,27 +35,31 @@ void	PhoneBook::add_contact(int i)
 	do
 	{
 		std::cout << "First name : ";
-		std::getline(std::cin, first_name);
+		if (std::getline(std::cin, first_name) == NULL)
+			exit (1);
 	} while (first_name.length() < 1);
 	do
 	{
 		std::cout << "Last name : ";
-		std::getline(std::cin, last_name);
+		if (std::getline(std::cin, first_name) == NULL)
+			exit (1);
 	} while (last_name.length() < 1);
 	do
 	{
-		std::cout << "Nickname : ";
-		std::getline(std::cin, nickname);
+		if (std::getline(std::cin, first_name) == NULL)
+			exit (1);
 	} while (nickname.length() < 1);
 	do
 	{
 		std::cout << "Phone_number : ";
-		std::getline(std::cin, phone_number);
+		if (std::getline(std::cin, first_name) == NULL)
+			exit (1);
 	} while (phone_number.length() < 1);
 	do
 	{
 		std::cout << "Darkest_secret : ";
-		std::getline(std::cin, darkest_secret);
+		if (std::getline(std::cin, first_name) == NULL)
+			exit (1);
 	} while (darkest_secret.length() < 1);
 	if (nb_contact < 8)
 		nb_contact++;
