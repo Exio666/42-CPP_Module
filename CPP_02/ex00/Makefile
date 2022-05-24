@@ -6,7 +6,7 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 18:02:40 by bsavinel          #+#    #+#              #
-#    Updated: 2022/03/15 17:09:43 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/05/24 18:12:46 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS	=	main.cpp	\
 
 OBJS	= 	$(SRCS:.cpp=.o)
 
-NAME = test
+NAME = Fixed
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
