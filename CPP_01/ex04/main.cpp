@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 19:22:22 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/14 20:10:27 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:34:59 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ std::string	replace(std::string extract, char *av2, char *av3)
 	int			i;
 	int			j;
 	int			tmp;
+	int			find;
 	std::string	new_str;
 	std::string	tmp_str;
 
@@ -44,12 +45,14 @@ std::string	replace(std::string extract, char *av2, char *av3)
 	{
 		tmp = i;
 		j = 0;
+		find = 0;
 		while (extract[tmp] && extract[tmp] == to_change[j])
 		{
 			tmp++;
 			j++;
 			if (!to_change[j])
 			{
+				find = 1;
 				j = 0;
 				i = tmp;
 				while (replace[j])
@@ -59,8 +62,11 @@ std::string	replace(std::string extract, char *av2, char *av3)
 				}
 			}
 		}
-		new_str += extract[i];
-		i++;	
+		if (!find)
+		{
+			new_str += extract[i];
+			i++;
+		}
 	}
 	new_str += "\0";
 	std::cout << new_str << std::endl;
@@ -82,8 +88,8 @@ int main(int ac, char **av)
 	std::string		new_file;
 
 	extract = extract_file(av[1]);
+	std::cout << extract << std::endl;
 	new_file = replace(extract, av[2], av[3]);
 	ofs << new_file;
-	//std::cout << extract << std::endl;
 	return (0);
 }

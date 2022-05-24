@@ -6,16 +6,16 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 19:23:35 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/15 16:27:44 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:55:06 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int main(int ac, char **av)
 {
-	Karen alert;
+	Harl alert;
 	std::string	level_str[4] = {"DEBUG", "INFO", "WARNING", "ERROR"}; 
 	int i;
 
@@ -31,15 +31,26 @@ int main(int ac, char **av)
 			break ;
 		i++;
 	}
-	if (i == 4)
+	switch (i)
 	{
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		return (1);
-	}
-	while (i < 4)
-	{
-		std::cout << "[ "<< level_str[i] << " ]" << std::endl;
-		alert.complain(level_str[i]);
-		i++;
+		case 0:
+			std::cout << "[ "<< level_str[0] << " ]" << std::endl;
+			alert.complain(level_str[0]);
+			std::cout << std::endl;
+		case 1:
+			std::cout << "[ "<< level_str[1] << " ]" << std::endl;
+			alert.complain(level_str[1]);
+			std::cout << std::endl;
+		case 2:
+			std::cout << "[ "<< level_str[2] << " ]" << std::endl;
+			alert.complain(level_str[2]);
+			std::cout << std::endl;
+		case 3:
+			std::cout << "[ "<< level_str[3] << " ]" << std::endl;
+			alert.complain(level_str[3]);
+			std::cout << std::endl;
+			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }

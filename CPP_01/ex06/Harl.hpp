@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 19:23:50 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/15 16:19:23 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:41:40 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 typedef void (*fptr)(void);
 
-class Karen
+class Harl
 {
 	public:
-		Karen();
-		~Karen();
+		Harl();
+		~Harl();
 		void complain(std::string level);
 
 	private:

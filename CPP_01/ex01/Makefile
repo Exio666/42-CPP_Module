@@ -6,7 +6,7 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 18:02:40 by bsavinel          #+#    #+#              #
-#    Updated: 2022/03/11 18:59:12 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/05/24 13:26:23 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS	=	main.cpp		\
 
 OBJS	= 	$(SRCS:.cpp=.o)
 
-NAME = test
+NAME = Zombie
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 

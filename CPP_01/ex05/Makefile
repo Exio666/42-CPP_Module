@@ -6,16 +6,16 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 18:02:40 by bsavinel          #+#    #+#              #
-#    Updated: 2022/03/11 19:23:20 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/05/24 14:57:24 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp	\
-			Karen.cpp
+			Harl.cpp
 
 OBJS	= 	$(SRCS:.cpp=.o)
 
-NAME = test
+NAME = harl
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
