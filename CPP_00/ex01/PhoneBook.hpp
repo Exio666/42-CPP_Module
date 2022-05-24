@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:20:46 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/10 15:48:27 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/24 12:51:12 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "Contact.hpp"
 # include <iostream>
 # include <string>
+# include <iomanip>
 
 void	reduce_print(std::string str);
 

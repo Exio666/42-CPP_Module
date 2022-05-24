@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:45:58 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/10 18:58:54 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/24 13:00:39 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,10 @@ void	PhoneBook::print_phonebook(void)
 	std::string	str;
 
 	i = 0;
-	std::cout << "|     Index|First name| Last name|  Nickname|" << std::endl;
+	std::cout << "|" << std::setw(10) << "Index" << "|" 
+			<< std::setw(10) << "First name" << "|" 
+			<< std::setw(10) << "Last name" << "|" 
+			<< std::setw(10) << "Nickname" << "|" << std::endl;
 	while (i < nb_contact)
 	{
 		std::cout << "|       [" << i + 1 << "]|";
