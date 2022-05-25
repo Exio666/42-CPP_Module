@@ -6,11 +6,13 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 19:23:50 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/24 14:41:40 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:01:34 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef HARL_HPP
+# define HARL_HPP
+# include <string>
 
 typedef void (*fptr)(void);
 
@@ -27,3 +29,5 @@ class Harl
 		void warning() const;
 		void error() const;	
 };
+
+#endif
