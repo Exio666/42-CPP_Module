@@ -6,17 +6,19 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 18:02:40 by bsavinel          #+#    #+#              #
-#    Updated: 2022/05/25 11:52:07 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/05/25 16:11:41 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp	\
-			Fixed.cpp
+			Fixed.cpp	\
+			Point.cpp	\
+			bsp.cpp		\
 
 OBJS	= 	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 
-NAME = Fixed
+NAME = Triangle
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
