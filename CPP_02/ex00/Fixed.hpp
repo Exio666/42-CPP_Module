@@ -6,11 +6,14 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:08:48 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/24 18:12:09 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:02:00 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef FIXED_HPP
+# define FIXED_HPP
+
+# include <iostream>
 
 class Fixed
 {
@@ -28,3 +31,5 @@ class Fixed
 		int raw;
 		static const int bits_fracional_part = 8;
 };
+
+#endif

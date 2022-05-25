@@ -6,12 +6,15 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:08:48 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/24 18:49:46 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:01:54 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef FIXED_HPP
+# define FIXED_HPP
+
+# include <iostream>
+# include <string>
 
 class Fixed
 {
@@ -35,3 +38,5 @@ class Fixed
 };
 
 std::ostream &operator<<(std::ostream &stream, Fixed const &fixed);
+
+#endif
