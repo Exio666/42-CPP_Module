@@ -6,16 +6,16 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:27:49 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/26 14:27:06 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:37:19 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ScavTrap energy("Scavy");
-	ScavTrap dead("Scavo");
+	FragTrap energy("Fragy");
+	FragTrap dead("Frago");
 
 	energy.attack("zombie");
 	energy.takeDamage(9);
@@ -23,6 +23,7 @@ int main()
 	energy.attack("zombie");
 	energy.takeDamage(1);
 	energy.attack("zombie");
+	energy.highFivesGuys();
 
 	dead.takeDamage(999);
 	dead.beRepaired(1);

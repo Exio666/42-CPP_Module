@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 17:27:49 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/26 15:37:01 by bsavinel         ###   ########.fr       */
+/*   Created: 2022/05/26 15:27:37 by bsavinel          #+#    #+#             */
+/*   Updated: 2022/05/26 15:39:33 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main()
+#include "ClapTrap.hpp"
+
+class FragTrap: public ClapTrap
 {
-	ScavTrap energy("Scavy");
-	ScavTrap dead("Scavo");
+	public:
+		FragTrap();
+		FragTrap(const FragTrap &copy);
+		FragTrap(std::string name);
+		~FragTrap();
 
-	energy.attack("zombie");
-	energy.takeDamage(9);
-	energy.beRepaired(1);
-	energy.attack("zombie");
-	energy.takeDamage(1);
-	energy.attack("zombie");
-	energy.guardGate();
-	energy.guardGate();
+		void	operator=(const FragTrap &copy);		
+		void 	highFivesGuys();
+};
 
-	dead.takeDamage(999);
-	dead.beRepaired(1);
-	dead.attack("zombie");
-}
+#endif

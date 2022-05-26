@@ -6,18 +6,19 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 18:02:40 by bsavinel          #+#    #+#              #
-#    Updated: 2022/05/26 14:27:30 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/05/26 15:38:10 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp		\
 			ClapTrap.cpp	\
 			ScavTrap.cpp	\
+			FragTrap.cpp	\
 
 OBJS	= 	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 
-NAME = ScavTrap
+NAME = FragTrap
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
