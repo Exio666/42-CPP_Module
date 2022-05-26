@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:22:44 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/25 17:54:41 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/26 11:29:52 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 ClapTrap::ClapTrap()
 {
+	name = " X ";
+	HitPoints = 10;
+	EnergyPoints = 10;
+	Attack_damage = 0;
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 

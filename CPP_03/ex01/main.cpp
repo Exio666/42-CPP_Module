@@ -6,29 +6,22 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:27:49 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/25 17:52:29 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/26 14:27:06 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap energy("Clapy");
-	ClapTrap dead("Clapo");
+	ScavTrap energy("Scavy");
+	ScavTrap dead("Scavo");
 
-	energy.attack("zombie");
 	energy.attack("zombie");
 	energy.takeDamage(9);
 	energy.beRepaired(1);
 	energy.attack("zombie");
 	energy.takeDamage(1);
-	energy.attack("zombie");
-	energy.attack("zombie");
-	energy.attack("zombie");
-	energy.attack("zombie");
-	energy.attack("zombie");
-	energy.attack("zombie");
 	energy.attack("zombie");
 
 	dead.takeDamage(999);
