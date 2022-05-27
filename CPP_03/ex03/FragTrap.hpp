@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 15:27:37 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/26 15:39:33 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/27 14:35:24 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap: public ClapTrap
+class FragTrap: public virtual ClapTrap
 {
 	public:
 		FragTrap();

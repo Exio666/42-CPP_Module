@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 11:09:47 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/26 14:20:52 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/27 14:28:11 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class ScavTrap: public virtual ClapTrap
 {
 	public:
 		ScavTrap();

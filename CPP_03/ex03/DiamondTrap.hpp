@@ -6,17 +6,17 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:16:21 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/26 16:19:12 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/27 15:02:35 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDRAP_HPP
-# define DIAMONDRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class DiamondTrap: virtual ScavTrap, virtual FragTrap
+class DiamondTrap: public ScavTrap, public FragTrap
 {
 	public:
 		DiamondTrap();
@@ -25,11 +25,10 @@ class DiamondTrap: virtual ScavTrap, virtual FragTrap
 		~DiamondTrap();
 
 		void	operator=(const DiamondTrap &copy);		
-		void 	guardGate();
-		void	attack(const std::string& target);
-
-	protected:
-		bool	Guarding;	
+		using	ScavTrap::attack;
+		void	whoAmI();
+	private:
+		std::string	name;
 };
 
 #endif

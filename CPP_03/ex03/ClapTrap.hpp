@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:22:09 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/26 11:28:52 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/27 14:38:05 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class ClapTrap
 		int			HitPoints;
 		int			EnergyPoints;
 		int			Attack_damage;
-		std::string	name;
+		std::string name;
 };
 
 #endif
