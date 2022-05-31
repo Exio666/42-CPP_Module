@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:01:20 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/30 13:02:58 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 11:10:34 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ICHARACTER_HPP
 
 #include <string>
+class ICharacter;
 #include "AMateria.hpp"
 
 class ICharacter
@@ -25,5 +26,7 @@ class ICharacter
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
 };
+
+
 
 #endif

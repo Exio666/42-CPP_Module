@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:10:39 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/30 14:24:02 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 11:23:06 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Cure: public AMateria
 {
 	public:
 		Cure();
-		Cure(std::string type);
 		Cure(const Cure & copy);
 		~Cure();
 

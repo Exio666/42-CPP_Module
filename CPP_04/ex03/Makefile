@@ -6,7 +6,7 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 20:13:46 by bsavinel          #+#    #+#              #
-#    Updated: 2022/05/30 20:15:11 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/05/31 11:12:15 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS	=	AMateria.cpp		\
 OBJS	= 	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 
-NAME = Animal
+NAME = Materia
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
@@ -42,7 +42,8 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: fclean all
+re: fclean 
+	make all
 
 -include $(DEPS)
 

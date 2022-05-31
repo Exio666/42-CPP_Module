@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 15:38:00 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/30 20:02:15 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 11:30:46 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,13 @@ Character::Character(const Character& copy)
 
 Character::~Character()
 {
-
+	for (int i = 0; i < 4; i++)
+	{
+		if (place_take[i] == true)
+		{
+			delete inventory[i];
+		}
+	}
 }
 
 //!------------------------------OPERATOR-------------------------------------
@@ -64,6 +70,11 @@ Character	&Character::operator=(const Character& copy)
 
 //!------------------------------FUNCTION-------------------------------------
 
+std::string const & Character::getName() const
+{
+	return (name);
+}
+
 void	Character::equip(AMateria* m)
 {
 	if (nb_materia >= 4)
@@ -77,7 +88,9 @@ void	Character::equip(AMateria* m)
 		{
 			if (place_take[i] == false)
 			{
+				nb_materia++;
 				inventory[i] = m;
+				place_take[i] = true;
 				return ;
 			}
 		}
@@ -88,7 +101,7 @@ void Character::unequip(int idx)
 {
 	if (idx > nb_materia || idx <= 0)
 	{
-		std::cout << "The materia doesn't" <<  std::endl;
+		std::cout << "The materia doesn't exist" <<  std::endl;
 	}
 	else
 	{
@@ -99,13 +112,10 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx > nb_materia || idx <= 0)
+	if (idx > nb_materia || idx < 0 || place_take[idx] == false)
 	{
-		std::cout << "The materia doesn't" <<  std::endl;
+		std::cout << "The materia doesn't exist" <<  std::endl;
 	}
 	else
-	{
-		if (place_take[idx] = true)
-			inventory[idx]->use(target);
-	}
+		inventory[idx]->use(target);
 }

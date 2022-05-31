@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:52:03 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/30 14:22:08 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 11:26:34 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,7 @@
 
 Ice::Ice()
 {
-
-}
-
-Ice::Ice(std::string type)
-{
-	this->type = type;
+	type = "ice";
 }
 
 Ice::Ice(const Ice& copy)
@@ -49,7 +44,7 @@ Ice	&	Ice::operator=(const Ice& copy)
 
 AMateria* Ice::clone() const
 {
-	AMateria *ice = new Ice(this->type);
+	AMateria *ice = new Ice();
 	return ice;
 }
 

@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:55:53 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/30 14:19:45 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 10:58:52 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,6 @@ AMateria::AMateria(const AMateria& copy)
 	*this = copy;
 }
 
-//!------------------------------DESTRUCTOR-----------------------------------
-
-AMateria::~AMateria()
-{
-
-}
-
 //!------------------------------OPERATOR-------------------------------------
 
 AMateria	&	AMateria::operator=(const AMateria& copy)
@@ -54,5 +47,5 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "* Materia " << type << " was use *" << std::endl;
+	std::cout << "* Materia " << type << " was use on " << target.getName() << " *" << std::endl;
 }

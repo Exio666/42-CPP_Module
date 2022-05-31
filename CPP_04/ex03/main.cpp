@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:11:02 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/30 20:06:39 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 11:17:38 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
+#include <iostream>
 
 int main()
 {
@@ -22,13 +23,13 @@ int main()
 	src->learnMateria(new Cure());
 	
 	ICharacter* me = new Character("me");
-	
+
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-	
+
 	ICharacter* bob = new Character("bob");
 	
 	me->use(0, *bob);

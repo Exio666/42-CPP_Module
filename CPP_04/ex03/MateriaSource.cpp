@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 15:50:16 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/30 18:47:56 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 11:17:10 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	MateriaSource::learnMateria(AMateria * learn)
 		std::cout << "The source is full" << std::endl;
 	else
 	{
-		*source[nb_source] = *learn;
+		source[nb_source] = learn;
 		nb_source++;
 	}
 }
@@ -62,7 +62,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	for (int i = 0; i < nb_source; i++)
 	{
 		if (source[i]->getType().compare(type))
-			return (new source[i]);
+			return (this->source[i]);
 	}
 	std::cout << "Nothing corespond in this source" <<  std::endl;
 	return 0;
