@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 19:22:22 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/24 14:34:59 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 17:15:05 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ std::string	replace(std::string extract, char *av2, char *av3)
 		}
 	}
 	new_str += "\0";
-	std::cout << new_str << std::endl;
+	//std::cout << new_str << std::endl;
 	return (new_str);
 }
 
@@ -88,7 +88,7 @@ int main(int ac, char **av)
 	std::string		new_file;
 
 	extract = extract_file(av[1]);
-	std::cout << extract << std::endl;
+	//std::cout << extract << std::endl;
 	new_file = replace(extract, av[2], av[3]);
 	ofs << new_file;
 	return (0);
