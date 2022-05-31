@@ -6,13 +6,17 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 20:13:36 by bsavinel          #+#    #+#              #
-#    Updated: 2022/05/31 16:07:52 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/05/31 19:20:57 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	main.cpp		\
-			Bureaucrat.cpp	\
-			Form.cpp		\
+SRCS	=	main.cpp					\
+			Bureaucrat.cpp				\
+			Form.cpp					\
+			ShrubberyCreationForm.cpp	\
+			RobotomyRequestForm.cpp		\
+			PresidentialPardonForm.cpp	\
+
 
 OBJS	= 	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)

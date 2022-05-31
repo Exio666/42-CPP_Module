@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 20:16:30 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 16:20:44 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:14:17 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,17 @@ void	Bureaucrat::signForm(Form& form)
 		std::cout << name << " couldn't sign " << form.getName() << " because he's grade is to low" << std::endl;;
 	}
 	
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << name << " execute " << form.getName() << std::endl;
+	}
+	catch(const Form::GradeTooLowException& e)
+	{
+		std::cout << name << " couldn't execute " << form.getName() << " because he's grade is to low" << std::endl;;
+	}
 }

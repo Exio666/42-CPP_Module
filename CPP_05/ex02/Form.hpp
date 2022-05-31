@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:04:56 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 15:57:09 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:20:00 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Form
 		Form();
 		Form(std::string name, int gradeSigne, int gradeExecute);
 		Form(const Form & copy);
-		~Form();
+		virtual ~Form();
 
 		Form & operator=(const Form & copy);
 		
@@ -34,6 +34,7 @@ class Form
 		int			getGradeSigne() const;
 		int			getGradeExecute() const;
 		void		beSigned(const Bureaucrat& bureaucrat);
+		virtual void		execute(Bureaucrat const & executor) const = 0;
 		
 		class GradeTooHighException: public std::exception
 		{

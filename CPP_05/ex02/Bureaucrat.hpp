@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 20:16:10 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 16:07:42 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:11:39 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Bureaucrat
 		const std::string	&getName() const;
 		const int			&getGrade() const;
 		void				signForm(Form& form);
+		void				executeForm(Form const &form);
 			
 		class GradeTooHighException: public std::exception
 		{
