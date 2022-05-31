@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 20:16:10 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/30 20:27:50 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/05/31 13:46:50 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BUREAUCRAT_HPP
 
 #include <string>
+#include <exception>
 
 class Bureaucrat
 {
@@ -24,11 +25,20 @@ class Bureaucrat
 		~Bureaucrat();
 
 		Bureaucrat & operator=(const Bureaucrat & copy);
-		void				up_echelon();
-		void				down_echelon();
-		const std::string	&get_name() const;
-		const int			&get_echelon() const;
-		
+		void				up_grade(int nb);
+		void				down_grade(int nb);
+		const std::string	&getName() const;
+		const int			&getGrade() const;
+		class GradeTooHighException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		class GradeTooLowException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 	private:
 		std::string	name;
 		int			echelon;

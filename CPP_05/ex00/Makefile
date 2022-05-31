@@ -6,7 +6,7 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 20:13:36 by bsavinel          #+#    #+#              #
-#    Updated: 2022/05/30 20:17:15 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/05/31 13:52:40 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS	=	main.cpp		\
 OBJS	= 	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 
-NAME = Animal
+NAME = Bureaucrat
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
