@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/01 10:16:47 by bsavinel          #+#    #+#              #
-#    Updated: 2022/06/01 10:28:29 by bsavinel         ###   ########.fr        #
+#    Created: 2022/06/01 10:28:11 by bsavinel          #+#    #+#              #
+#    Updated: 2022/06/01 10:37:28 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS	=	main.cpp	\
 OBJS	= 	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 
-NAME = whatever
+NAME = iter
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
