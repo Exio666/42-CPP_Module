@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 20:15:51 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 19:25:44 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/01 10:07:37 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Form.hpp"
+#include "Intern.hpp"
 #include <iostream>
 
 int main()
 {
 	Bureaucrat bob = Bureaucrat("Bob", 150);
 	Bureaucrat Gerald = Bureaucrat("Gerald", 1);
-	Form * tree = new ShrubberyCreationForm("forest");
-	Form * robot = new RobotomyRequestForm("Boby");
-	Form * pres = new PresidentialPardonForm("Albert");
+	Intern *truc = new Intern();
+	Form * tree = truc->makeForm("shrubbery creation", "forest");
+	Form * robot = truc->makeForm("robotomy request", "Boby");
+	Form * pres = truc->makeForm("presidential pardon", "Albert");
 	std::cout << " Sign of form " << std::endl << std::endl;
 	bob.signForm(*tree);
 	bob.signForm(*robot);
@@ -43,4 +45,5 @@ int main()
 	delete tree;
 	delete robot;
 	delete pres;
+	delete truc;
 }

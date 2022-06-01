@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 17:21:29 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 19:13:38 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/01 09:58:43 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ShrubberyCreationForm: public Form
 		ShrubberyCreationForm(const ShrubberyCreationForm & copy);
 		ShrubberyCreationForm(std::string target);
 		~ShrubberyCreationForm();
-
+		
 		ShrubberyCreationForm & operator=(const ShrubberyCreationForm & copy);
 
 		void		execute(Bureaucrat const & executor) const;
