@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:44:49 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/01 10:06:33 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/01 10:08:35 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ Form *Intern::makeForm(std::string form, std::string target)
 	{
 		if (all_demande[i].compare(form) == 0)
 		{
-			//std::cerr << form << std::endl << all_demande[i] << std::endl;
 			std::cout << "Intern creates " << all_demande[i] << " form" << std::endl;
 			return ((*this).*(all_form[i]))(target);
 		}
