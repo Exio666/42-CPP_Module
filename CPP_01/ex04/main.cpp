@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 19:22:22 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 17:15:05 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/06 15:02:46 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-#include <stdio.h>
+#include <stdlib.h>
 
 std::string	extract_file(char *file)
 {
@@ -22,6 +22,13 @@ std::string	extract_file(char *file)
 	std::stringstream	buffer;
 	std::ifstream		ifs(file);
 	
+	if (!ifs.is_open() || ifs.bad() || ifs.peek() == std::ifstream::traits_type::eof())
+	{
+		if (ifs.is_open())
+			ifs.close();
+		std::cout << "Bad open file ." << std::endl;
+		exit(1);
+	}
 	while (buffer << ifs.rdbuf())
 		;
 	extract = buffer.str();
@@ -69,7 +76,6 @@ std::string	replace(std::string extract, char *av2, char *av3)
 		}
 	}
 	new_str += "\0";
-	//std::cout << new_str << std::endl;
 	return (new_str);
 }
 
@@ -83,12 +89,16 @@ int main(int ac, char **av)
 	
 	std::string		extract;
 	std::string		file(av[1]);
+	std::string		new_file;
+	extract = extract_file(av[1]);
+	
 	file += ".replace";
 	std::ofstream	ofs(file.c_str());
-	std::string		new_file;
-
-	extract = extract_file(av[1]);
-	//std::cout << extract << std::endl;
+	if (!ofs.is_open())
+	{
+		std::cout << "Bad open file" << std::endl;
+		exit(1);
+	}
 	new_file = replace(extract, av[2], av[3]);
 	ofs << new_file;
 	return (0);

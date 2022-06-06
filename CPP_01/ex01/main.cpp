@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:03:44 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/24 13:22:20 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/06 13:21:50 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int	main()
 		zombie[i].announce();
 		i++;
 	}
-	delete [] zombie;
+	if (nb_zombie > 0)
+		delete [] zombie;
 }

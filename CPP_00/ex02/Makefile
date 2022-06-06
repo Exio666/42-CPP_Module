@@ -5,13 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/08 15:12:23 by bsavinel          #+#    #+#              #
-#    Updated: 2022/05/24 15:10:06 by bsavinel         ###   ########.fr        #
+#    Created: 2022/06/06 10:53:18 by bsavinel          #+#    #+#              #
+#    Updated: 2022/06/06 10:54:09 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+
 SRCS	=	Account.cpp	\
-			tests.cpp
+			tests.cpp	\
 
 OBJS	= 	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
@@ -40,6 +41,6 @@ fclean: clean
 
 re: fclean all
 
-.-include $(DEPS)
+-include $(DEPS)
 
-PHONY: all clean fclean re
+.PHONY: all clean fclean re
