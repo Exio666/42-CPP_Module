@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.tpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 10:16:39 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/01 10:22:30 by bsavinel         ###   ########.fr       */
+/*   Created: 2022/06/01 10:30:19 by bsavinel          #+#    #+#             */
+/*   Updated: 2022/06/06 19:37:53 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-template <typename T>
-void swap(T &a, T &b)
-{
-	T tmp;
-	tmp = a;
-	a = b;
-	b = tmp;
-}
+#ifndef ITER_TPP
+# define ITER_TPP
 
 template <typename T>
-T max(T a, T b)
+void iter(T *tab, int size, T (*f)(T))
 {
-	if (a > b)
-		return a;
-	else
-		return b;
+	for (int i = 0; i < size; i++)
+	{
+		tab[i] = f(tab[i]);
+	}
 }
 
-template <typename T>
-T min(T a, T b)
-{
-	if (a < b)
-		return a;
-	else
-		return b;
-}
+#endif
