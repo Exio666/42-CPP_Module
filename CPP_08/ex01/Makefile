@@ -5,19 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/06 19:47:40 by bsavinel          #+#    #+#              #
-#    Updated: 2022/06/07 15:08:37 by bsavinel         ###   ########.fr        #
+#    Created: 2022/06/07 10:54:04 by bsavinel          #+#    #+#              #
+#    Updated: 2022/06/07 15:09:50 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp	\
+			Span.cpp	\
 
 OBJS	= 	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 
-NAME = easyfind
+NAME = Span
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -g3
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
 CC = c++
 
