@@ -6,15 +6,15 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:28:44 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/08 15:44:42 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/08 16:10:38 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "iter.tpp"
 
-/*//! Main correction
-class Awesome
+//! Main correction
+/*class Awesome
 {
 	public:
 		Awesome( void ) : _n( 42 )
@@ -46,24 +46,25 @@ int main()
 	int tab[] = { 0, 1, 2, 3, 4 };
 	Awesome tab2[5];
 
-	iter( tab, 5, print<int> );
-	iter( tab2, 5, print<Awesome> );
+	iter( tab, 5, print );
+	iter( tab2, 5, print );
 
 	return 0;
-}
-*/
+}*/
+
 
 //! Main perso
 
-void up_1(int &a)
+template <typename H>
+void ft_print(H &s)
 {
-	a = a + 1;
-	return ;
+    std::cout << s << std::endl;
 }
 
-int up_2(const int &a)
+void up_1(const int &a)
 {
-	return a;
+	std::cout << a << std::endl;
+	return ;
 }
 
 int main()
@@ -85,22 +86,6 @@ int main()
 		std::cout << std::endl;
 	}
 	{
-		const int tab_int[8] = {0, 1, 2 ,3 ,4, 5, 6, 7};
-		for (int i = 0; i < 8; i++)
-		{
-			std::cout << tab_int[i] << " ";
-		}
-		std::cout << std::endl;
-
-		iter(tab_int, 8, &up_2);
-
-		for (int i = 0; i < 8; i++)
-		{
-			std::cout << tab_int[i] << " ";
-		}
-		std::cout << std::endl;
-	}
-	{
 		int tab_int[8] = {0, 1, 2 ,3 ,4, 5, 6, 7};
 		for (int i = 0; i < 8; i++)
 		{
@@ -108,7 +93,7 @@ int main()
 		}
 		std::cout << std::endl;
 
-		iter(tab_int, 8, ft_print<int>);
+		iter(tab_int, 8, ft_print);
 
 		for (int i = 0; i < 8; i++)
 		{
