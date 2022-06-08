@@ -5,35 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 10:28:44 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/07 18:45:25 by bsavinel         ###   ########.fr       */
+/*   Created: 2022/06/07 17:34:55 by bsavinel          #+#    #+#             */
+/*   Updated: 2022/06/08 13:30:05 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#define CONT stack
+
+#include "MutantStack.tpp"
 #include <iostream>
-#include "iter.tpp"
-
-
-void up_1(int &a)
-{
-	a = a + 1;
-	return ;
-}
 
 int main()
 {
-	int tab_int[8] = {0, 1, 2 ,3 ,4, 5, 6, 7};
-	for (int i = 0; i < 8; i++)
-	{
-		std::cout << tab_int[i] << " ";
-	}
-	std::cout << std::endl;
+	MutantStack<int> mstack;
 	
-	iter(tab_int, 8, &up_1);
+	mstack.push(5);
+	mstack.push(17);
+	
+	std::cout << mstack.top() << std::endl;
+	
+	mstack.pop();
 
-	for (int i = 0; i < 8; i++)
+	std::cout << mstack.size() << std::endl;
+	
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	mstack.push(0);
+	
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	
+	++it;
+	--it;
+	while (it != ite)
 	{
-		std::cout << tab_int[i] << " ";
+		std::cout << *it << std::endl;
+		++it;
 	}
-	std::cout << std::endl;
+	
+	std::stack<int> s(mstack);
+	return 0;
 }
