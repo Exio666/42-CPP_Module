@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:28:24 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/30 10:50:02 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/10 15:22:30 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ Dog::~Dog()
 
 Dog	&	Dog::operator=(const Dog& copy)
 {
+	if (this == &copy)
+		return (*this);
 	this->type = copy.type;
 	return(*this);
 }

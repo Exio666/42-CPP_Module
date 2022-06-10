@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:29:34 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/30 11:47:12 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/10 15:25:42 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
-#include "WrongDog.hpp"
 #include "WrongCat.hpp"
 #include <iostream>
 
 int main()
 {
+	//Animal test;
 	Animal* tab[10];
 	int i;
 	i = 0;

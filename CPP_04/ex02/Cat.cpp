@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:46:48 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/30 10:49:58 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/10 15:24:15 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ Cat::~Cat()
 
 Cat	&	Cat::operator=(const Cat& copy)
 {
+	if (this == &copy)
+		return (*this);
 	this->type = copy.type;
 	return(*this);
 }

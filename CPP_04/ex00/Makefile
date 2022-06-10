@@ -6,7 +6,7 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/27 17:12:57 by bsavinel          #+#    #+#              #
-#    Updated: 2022/05/27 17:24:16 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/06/10 15:21:10 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ SRCS	=	main.cpp		\
 			Dog.cpp			\
 			Cat.cpp			\
 			WrongAnimal.cpp	\
-			WrongDog.cpp	\
 			WrongCat.cpp	\
 
 OBJS	= 	$(SRCS:.cpp=.o)
