@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 13:04:19 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/25 15:57:16 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/09 16:26:55 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Point
 		Fixed get_x();
 		Fixed get_y();
 	private:
-		Fixed x;
-		Fixed y;
+		const Fixed x;
+		const Fixed y;
 };
 
 #endif
