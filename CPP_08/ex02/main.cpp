@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:34:55 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/08 13:30:05 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 13:28:23 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int main()
 	mstack.push(5);
 	mstack.push(17);
 	
-	std::cout << mstack.top() << std::endl;
+	std::cout << "Top : " << mstack.top() << std::endl;
 	
 	mstack.pop();
 
-	std::cout << mstack.size() << std::endl;
+	std::cout << "Size : " << mstack.size() << std::endl;
 	
 	mstack.push(3);
 	mstack.push(5);
