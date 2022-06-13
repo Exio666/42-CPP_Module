@@ -23,6 +23,8 @@ Animal::Animal()
 
 Animal::Animal(const Animal& copy)
 {
+	if (this == &copy)
+		return ;
 	*this = copy;
 	std::cout << "Animal copy constructor" << std::endl;
 }

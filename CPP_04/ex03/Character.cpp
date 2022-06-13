@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 15:38:00 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 11:30:46 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:45:20 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Character::Character()
 
 Character::Character(const std::string name)
 {
+
 	for (int i = 0; i < 4; i++)
 		place_take[i] = false;
 	nb_materia = 0;
@@ -33,6 +34,8 @@ Character::Character(const std::string name)
 
 Character::Character(const Character& copy)
 {
+	if (this == &copy)
+		return ;
 	*this = copy;
 }
 
@@ -55,16 +58,20 @@ Character	&Character::operator=(const Character& copy)
 {
 	int i;
 	
+	if (this == &copy)
+		return (*this);
 	this->name = copy.name;
 	this->nb_materia = copy.nb_materia;
 	i = 0;
-	while (i < nb_materia)
-	{
-		this->inventory[i] = copy.inventory[i];
-		i++;
-	}
 	for (int i = 0; i < 4; i++)
 		this->place_take[i] = copy.place_take[i];
+	while (i < nb_materia)
+	{
+		if (this->place_take[i] == true)
+			this->inventory[i] = copy.inventory[i]->clone();
+		i++;
+	}
+
 	return(*this);
 }
 

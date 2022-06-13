@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:46:48 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/10 15:24:15 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:36:06 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ Cat::Cat(): Animal()
 
 Cat::Cat(const Cat& copy): Animal(copy)
 {
+	if (this == &copy)
+		return ;
 	this->brain = new Brain;
 	*this = copy;
 	std::cout << "Cat copy constructor" << std::endl;
@@ -44,6 +46,7 @@ Cat	&	Cat::operator=(const Cat& copy)
 	if (this == &copy)
 		return (*this);
 	this->type = copy.type;
+	*this->brain = *copy.brain;
 	return(*this);
 }
 

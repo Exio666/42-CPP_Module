@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:52:03 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 11:26:34 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:41:24 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ Ice::Ice()
 
 Ice::Ice(const Ice& copy)
 {
+	if (this == &copy)
+		return ;
 	*this = copy;
 }
 
@@ -36,6 +38,8 @@ Ice::~Ice()
 
 Ice	&	Ice::operator=(const Ice& copy)
 {
+	if (this == &copy)
+		return (*this);
 	this->type = copy.type;
 	return(*this);
 }

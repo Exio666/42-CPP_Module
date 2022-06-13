@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:10:57 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/27 17:16:05 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:29:37 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ WrongCat::WrongCat()
 
 WrongCat::WrongCat(const WrongCat& copy)
 {
+	if (this == &copy)
+		return ;
 	*this = copy;
 	std::cout << "WrongCat copy constructor" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 15:50:16 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 11:17:10 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:41:14 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource& copy)
 {
+	if (this == &copy)
+		return ;
 	*this = copy;
 }
 
@@ -36,6 +38,8 @@ MateriaSource::~MateriaSource()
 
 MateriaSource	&	MateriaSource::operator=(const MateriaSource& copy)
 {
+	if (this == &copy)
+		return (*this);
 	this->nb_source = copy.nb_source;
 	for (int i = 0; i < this->nb_source; i++)
 	{

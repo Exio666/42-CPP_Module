@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:11:13 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/27 17:15:56 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:31:10 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ WrongAnimal::WrongAnimal()
 
 WrongAnimal::WrongAnimal(const WrongAnimal& copy)
 {
+	if (this == &copy)
+		return ;
 	*this = copy;
 	std::cout << "WrongAnimal copy constructor" << std::endl;
 }

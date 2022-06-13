@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:55:53 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 10:58:52 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:41:39 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ AMateria::AMateria(std::string const & type)
 
 AMateria::AMateria(const AMateria& copy)
 {
+	if (this == &copy)
+		return ;
 	*this = copy;
 }
 
@@ -34,6 +36,8 @@ AMateria::AMateria(const AMateria& copy)
 
 AMateria	&	AMateria::operator=(const AMateria& copy)
 {
+	if (this == &copy)
+		return (*this);
 	this->type = copy.type;
 	return(*this);
 }

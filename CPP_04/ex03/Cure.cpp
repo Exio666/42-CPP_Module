@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:22:37 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 11:24:09 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:41:30 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ Cure::Cure()
 
 Cure::Cure(const Cure& copy)
 {
+	if (this == &copy)
+		return ;
 	*this = copy;
 }
 
@@ -36,6 +38,8 @@ Cure::~Cure()
 
 Cure	&	Cure::operator=(const Cure& copy)
 {
+	if (this == &copy)
+		return (*this);
 	this->type = copy.type;
 	return(*this);
 }

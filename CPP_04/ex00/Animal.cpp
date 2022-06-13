@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:27:33 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/27 17:15:51 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:30:55 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ Animal::Animal()
 
 Animal::Animal(const Animal& copy)
 {
+	if (this == &copy)
+		return ;
 	*this = copy;
 	std::cout << "Animal copy constructor" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 09:40:04 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/10 15:24:53 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:29:13 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ Brain::Brain()
 
 Brain::Brain(const Brain& copy)
 {
+	if (this == &copy)
+		return ;
 	*this = copy;
 }
 

@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:28:24 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/10 15:22:30 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:36:46 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ Dog::Dog(): Animal()
 
 Dog::Dog(const Dog& copy): Animal(copy)
 {
+	if (this == &copy)
+		return ;
 	this->brain = new Brain;
 	*this = copy;
 	std::cout << "Dog copy constructor" << std::endl;
@@ -44,6 +46,7 @@ Dog	&	Dog::operator=(const Dog& copy)
 	if (this == &copy)
 		return (*this);
 	this->type = copy.type;
+	*this->brain = *copy.brain;
 	return(*this);
 }
 
