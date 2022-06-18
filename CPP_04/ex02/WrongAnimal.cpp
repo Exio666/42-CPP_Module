@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:11:13 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/13 11:29:32 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/18 10:09:42 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	WrongAnimal::makeSound() const
 	std::cout << "WrongAnimal make sound" << std::endl;
 }
 
-std::string		WrongAnimal::get_type() const
+std::string		WrongAnimal::getType() const
 {
 	return (type);
 }

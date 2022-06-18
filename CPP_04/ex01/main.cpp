@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:29:34 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/10 15:21:43 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/18 10:01:17 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int main()
 		tab[i] = new Cat();
 		i++;
 	}
+	for (int i = 0; i < 10 ;i++)
+		tab[i]->makeSound();
 	Dog	*dogo = new Dog();
 	Cat	*caty = new Cat();
 	dogo->set_ideas(1, "eat");
@@ -41,7 +43,7 @@ int main()
 	i = 0;
 	while (i < 10)
 	{
-		std::cout << "Type of animal number " << i << " : " << tab[i]->get_type() << std::endl;
+		std::cout << "Type of animal number " << i << " : " << tab[i]->getType() << std::endl;
 		i++;
 	}
 	std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 09:40:04 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/13 11:29:56 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/13 13:43:23 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,14 @@ Brain	&	Brain::operator=(const Brain& copy)
 {
 	int i;
 
-	if (this == &copy)
-		return (*this);
-	i = 0;
-	while (i < 100)
+	if (this != &copy)
 	{
-		this->ideas[i] = copy.ideas[i];
-		i++;
+		i = 0;
+		while (i < 100)
+		{
+			this->ideas[i] = copy.ideas[i];
+			i++;
+		}
 	}
 	return(*this);
 }

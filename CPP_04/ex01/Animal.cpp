@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:27:33 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/27 17:15:51 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/18 09:59:02 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	Animal::makeSound() const
 	std::cout << "Animal make sound" << std::endl;
 }
 
-std::string		Animal::get_type() const
+std::string		Animal::getType() const
 {
 	return (type);
 }

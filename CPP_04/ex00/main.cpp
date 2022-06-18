@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:29:34 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/10 15:20:19 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/18 10:01:11 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int main()
 	const Animal* dog		= new Dog();
 	const Animal* cat		= new Cat();
 
-	std::cout << "The type of animal is : " << animal->get_type() << std::endl;
-	std::cout << "The type of dog is : " << dog->get_type() << std::endl;
-	std::cout << "The type of cat is : " << cat->get_type() << std::endl;
+	std::cout << "The type of animal is : " << animal->getType() << std::endl;
+	std::cout << "The type of dog is : " << dog->getType() << std::endl;
+	std::cout << "The type of cat is : " << cat->getType() << std::endl;
 	animal->makeSound();
 	cat->makeSound();
 	dog->makeSound();
@@ -39,8 +39,8 @@ int main()
 	const WrongAnimal* wrong_animal 	= new WrongAnimal();
 	const WrongAnimal* wrong_cat		= new WrongCat();
 
-	std::cout << "The type of wrong_animal is : " << wrong_animal->get_type() << std::endl;
-	std::cout << "The type of wrong_cat is : " << wrong_cat->get_type() << std::endl;
+	std::cout << "The type of wrong_animal is : " << wrong_animal->getType() << std::endl;
+	std::cout << "The type of wrong_cat is : " << wrong_cat->getType() << std::endl;
 	wrong_animal->makeSound();
 	wrong_cat->makeSound();
 

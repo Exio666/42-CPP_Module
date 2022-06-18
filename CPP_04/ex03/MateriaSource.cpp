@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 15:50:16 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/13 11:41:14 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/18 09:53:32 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ MateriaSource::MateriaSource(const MateriaSource& copy)
 
 MateriaSource::~MateriaSource()
 {
-
+	for (int i = 0; i < nb_source; i++)
+		delete source[i];
 }
 
 //!------------------------------OPERATOR-------------------------------------
@@ -66,7 +67,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	for (int i = 0; i < nb_source; i++)
 	{
 		if (source[i]->getType().compare(type))
-			return (this->source[i]);
+			return (this->source[i]->clone());
 	}
 	std::cout << "Nothing corespond in this source" <<  std::endl;
 	return 0;
