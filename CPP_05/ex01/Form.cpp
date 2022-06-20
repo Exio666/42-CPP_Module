@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:05:21 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 16:20:59 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/20 13:46:55 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,25 @@
 
 //!------------------------------CONSTRUCTOR----------------------------------
 
-Form::Form()
+Form::Form(): gradeSigne(150), gradeExecute(150)
 {
-	name = "XXX";
-	gradeExecute = 150;
-	gradeSigne = 150;
+	std::string *tmp;
+	
+	tmp = const_cast <std::string *>(&this->name);
+	*tmp = "XXX";
 	signe = false;
 }
 
-Form::Form(std::string name, int gradeSigne, int gradeExecute)
+Form::Form(std::string name, int gradeSigne, int gradeExecute): name(name), gradeSigne(gradeSigne), gradeExecute(gradeExecute)
 {	
 	if (gradeSigne > 150 || gradeExecute > 150)
 		throw GradeTooLowException();
 	else if (gradeSigne < 1 || gradeExecute < 1)
 		throw GradeTooHighException();
-	this->name = name;
-	this->gradeExecute = gradeExecute;
-	this->gradeSigne = gradeSigne;
 	signe = false;
 }
 
-Form::Form(const Form& copy)
+Form::Form(const Form& copy): gradeSigne(20), gradeExecute(20)
 {
 	*this = copy;
 }
@@ -51,10 +49,16 @@ Form::~Form()
 
 Form	&	Form::operator=(const Form& copy)
 {
-	this->name = copy.name;
+	std::string	*tmp;
+	int			*tmp_int;
+	
+	tmp = const_cast <std::string *>(&this->name);
+	*tmp = copy.name;
 	this->signe = copy.signe;
-	this->gradeExecute = copy.gradeExecute;
-	this->gradeSigne = copy.gradeSigne;
+	tmp_int = const_cast <int *>(&this->gradeExecute);
+	*tmp_int = copy.gradeExecute;
+	tmp_int = const_cast <int *>(&this->gradeSigne);
+	*tmp_int = copy.gradeSigne;
 	return(*this);
 }
 

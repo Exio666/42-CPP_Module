@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 20:16:10 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 19:11:39 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:07:44 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ class Bureaucrat
 		};
 
 	private:
-		std::string	name;
+		const std::string	name;
 		int			echelon;
 };
 

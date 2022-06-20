@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 20:16:30 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 13:56:07 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:02:03 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,19 @@
 
 Bureaucrat::Bureaucrat()
 {
-	name = "somebody";
+	std::string *tmp;
+	
+	tmp = const_cast <std::string *>(&this->name);
+	*tmp = "somebody";
 	echelon = 75;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int echelon)
 {
-	this->name = name;
+	std::string *tmp;
+	
+	tmp = const_cast <std::string *>(&this->name);
+	*tmp = name;
 	if (echelon > 150)
 		throw GradeTooLowException();
 	else if (echelon < 1)
@@ -48,7 +54,10 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat	&	Bureaucrat::operator=(const Bureaucrat& copy)
 {
-	this->name = copy.name;
+	std::string *tmp;
+	
+	tmp = const_cast <std::string *>(&this->name);
+	*tmp = copy.name;
 	this->echelon = copy.echelon;
 	return(*this);
 }

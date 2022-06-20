@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 20:16:30 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 19:27:08 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/20 13:44:23 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 
 //!------------------------------CONSTRUCTOR----------------------------------
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(): name("somebody")
 {
-	name = "somebody";
 	echelon = 75;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int echelon)
+Bureaucrat::Bureaucrat(std::string name, int echelon): name(name)
 {
-	this->name = name;
 	if (echelon > 150)
 		throw GradeTooLowException();
 	else if (echelon < 1)
@@ -32,7 +30,7 @@ Bureaucrat::Bureaucrat(std::string name, int echelon)
 		this->echelon = echelon;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& copy)
+Bureaucrat::Bureaucrat(const Bureaucrat& copy): name(copy.name)
 {
 	*this = copy;
 }
@@ -48,7 +46,10 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat	&	Bureaucrat::operator=(const Bureaucrat& copy)
 {
-	this->name = copy.name;
+	std::string *tmp;
+	
+	tmp = const_cast <std::string *>(&this->name);
+	*tmp = copy.name;
 	this->echelon = copy.echelon;
 	return(*this);
 }

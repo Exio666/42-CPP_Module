@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 20:16:10 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 13:46:50 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/19 12:59:48 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ class Bureaucrat
 				virtual const char* what() const throw();
 		};
 	private:
-		std::string	name;
-		int			echelon;
+		const std::string	name;
+		int					echelon;
 };
 
 std::ostream &operator<<(std::ostream &stream, Bureaucrat const &bureaucrat);

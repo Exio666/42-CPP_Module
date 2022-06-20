@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:04:56 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 19:20:00 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/06/20 13:31:27 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ class Form
 		};
 
 	private:
-		std::string name;
+		const std::string name;
 		bool		signe;
-		int			gradeSigne;
-		int			gradeExecute;
+		const int			gradeSigne;
+		const int			gradeExecute;
 };
 
 std::ostream &operator<<(std::ostream &stream, Form const &form);
