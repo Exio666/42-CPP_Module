@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 17:21:27 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/05/31 19:21:14 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/05 09:02:49 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,17 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		std::string		file;
 		file = target + "_shrubbery";
 		std::ofstream	ofs(file.c_str());
-		ofs << " | | | " << std::endl
-			<< " \\ | /" << std::endl
-			<< "   |   " << std::endl;
+		ofs << "     ccee88oo " << std::endl
+			<< "  C8O8O8Q8PoOb o8oo " << std::endl
+			<< " dOB69QO8PdUOpugoO9bD " << std::endl
+			<< "CgggbU8OU qOp qOdoUOdcb " << std::endl
+			<< "    6OuU  |p u gcoUodpP " << std::endl
+			<< "      |||||  |douUP " << std::endl
+			<< "        ||||||| " << std::endl
+			<< "         ||||| " << std::endl
+			<< "         ||||| " << std::endl
+			<< "         ||||| " << std::endl
+			<< "   .....|||||||.... " << std::endl;
+
 	}
 }
