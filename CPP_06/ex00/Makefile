@@ -6,11 +6,12 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:48:30 by bsavinel          #+#    #+#              #
-#    Updated: 2022/06/08 15:49:44 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/07/05 09:52:57 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=
+SRCS	=	main.cpp	\
+			Convert.cpp	\
 
 OBJS	= 	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
