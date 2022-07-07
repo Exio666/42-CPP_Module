@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:48:32 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/07/07 13:46:46 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/07 19:44:40 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ void	Convert::printInt()
 	if (nb >= ' ' && nb <= '~')
 		std::cout	<< "char: " << "\'" << static_cast<char>(nb) << "\'" << std::endl;
 	else
-		std::cout	<< "char: impossible" << std::endl;
+		std::cout	<< "char: Non displayable" << std::endl;
 	std::cout	<< "int: " << nb << std::endl
 				<< "float: " << static_cast<float>(nb) << ".0f" << std::endl
 				<< "double: " << static_cast<double>(nb) << ".0" << std::endl;
@@ -173,7 +173,7 @@ bool	Convert::isFloat()
 			break;
 		i++;
 	}
-	if (i >= _value.size() || _value[i] != 'f')
+	if (i != _value.size() - 1 || _value[i] != 'f')
 		return false;
 
 	double nb;
@@ -187,14 +187,21 @@ bool	Convert::isFloat()
 
 void	Convert::printFloat()
 {
-	float nb;
+	double	tmp;
+	char	*pEnd;
+	float	 nb;
 	
+	std::cout	<< _value.c_str() << std::endl;
 	nb = atof(_value.c_str());
+	tmp = strtod(_value.c_str(), &pEnd);
 	if (nb >= ' ' && nb <= '~')
 		std::cout	<< "char: " << "\'" << static_cast<char>(nb) << "\'" << std::endl;
 	else
-		std::cout	<< "char: impossible" << std::endl;
-	std::cout	<< "int: " << static_cast<int>(nb) << std::endl;
+		std::cout	<< "char: Non displayable" << std::endl;
+	if (tmp >= INT_MIN && tmp <= 2147483583.0)
+		std::cout	<< "int: " << static_cast<int>(nb) << std::endl;
+	else
+		std::cout	<< "int: not in range of int" << std::endl;
 	if (nb - roundf(nb) == 0 && nb < 1000000 && nb > -1000000)
 		std::cout	<< "float: " << nb << ".0f" << std::endl
 					<< "double: " << static_cast<double>(nb) << ".0" << std::endl;
@@ -243,9 +250,9 @@ void	Convert::printDouble()
 	
 	nb = strtod(_value.c_str(), &pEnd);
 	if (nb >= ' ' && nb <= '~')
-		std::cout	<< "char: " << "\'" << static_cast<char>(nb) << "\'" << std::endl;
+		std::cout	<< "char: Non displayable" << "\'" << static_cast<char>(nb) << "\'" << std::endl;
 	else
-		std::cout	<< "char: impossible" << std::endl;
+		std::cout	<< "char: " << std::endl;
 	if (nb >= INT_MIN && nb <= INT_MAX)
 		std::cout	<< "int: " << static_cast<int>(nb) << std::endl;
 	else
