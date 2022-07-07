@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 10:53:56 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/07 16:15:31 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/07 14:32:50 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,15 @@ class Span
 		Span(const Span & copy);
 		~Span();
 
-		void	addNumber(int nb);
-		int shortestSpan();
-		int longestSpan();
-		void	fillSpan(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-		std::vector<int> &getVector();
-		void	printSpan(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+		void				addNumber(int nb);
+		int					shortestSpan();
+		int 				longestSpan();
+		void				fillSpan(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+		std::vector<int>	&getVector();
+		void				printSpan(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+		const unsigned int		&getActualSize();
+		const unsigned int		&getSizeMax();
+
 		Span & operator=(const Span & copy);
 
 		class TooMuchNumber: public std::exception
