@@ -6,7 +6,7 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 15:48:30 by bsavinel          #+#    #+#              #
-#    Updated: 2022/07/05 09:52:57 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/07/08 22:25:04 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS	=	main.cpp	\
 OBJS	= 	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 
-NAME = Scalaire_conversion
+NAME = convert
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 

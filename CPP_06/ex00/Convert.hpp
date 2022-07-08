@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:47:53 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/07/08 14:54:13 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/08 22:27:04 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,17 @@ class Convert
 {
 	public:
 		Convert();
-		Convert(const Convert & copy);
 		Convert(std::string value);
+		Convert(const Convert & copy);
 		~Convert();
 
-		Convert & operator=(const Convert & copy);
-		bool isSpecial();
-		void printSpecial();
-		bool isChar();
-		void printChar();
-		bool isInt();
-		void printInt();
-		bool isFloat();
-		void printFloat();
-		bool isDouble();
-		void printDouble();
-		void printNothing();
-
-
+		Convert &operator=(const Convert & copy);
 		bool	isGoodValue();
 		void	print(std::ostream &stream) const;
+
 	private:
-		void	feedClass();
-		std::string _value;
+		void		feedClass();
+		std::string	_value;
 		bool		_goodValue;
 		float		_float;
 		int			_int;
@@ -52,6 +40,5 @@ class Convert
 };
 
 std::ostream &operator<<(std::ostream &stream, Convert const &fixed);
-
 
 #endif
