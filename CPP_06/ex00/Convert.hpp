@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:47:53 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/07/05 13:24:04 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/08 14:54:13 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,22 @@ class Convert
 		void printDouble();
 		void printNothing();
 
+
+		bool	isGoodValue();
+		void	print(std::ostream &stream) const;
 	private:
+		void	feedClass();
 		std::string _value;
+		bool		_goodValue;
+		float		_float;
+		int			_int;
+		char		_char;
+		double		_double;
+		bool		_isSpecial;
+		bool		_isChar;
 };
+
+std::ostream &operator<<(std::ostream &stream, Convert const &fixed);
+
 
 #endif

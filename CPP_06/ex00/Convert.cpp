@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:48:32 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/07/07 19:44:40 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:05:14 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@ bool	Convert::isSpecial()
 
 void	Convert::printSpecial()
 {
+	if (_value.compare("inff") == 0 || _value.compare("inf") == 0)
+		std::cout	<< "char: impossible" << std::endl
+					<< "int: impossible" << std::endl
+					<< "float: +inff" << std::endl
+					<< "double: +inf" << std::endl;
 	if (_value.compare("-inff") == 0 || _value.compare("-inf") == 0)
 		std::cout	<< "char: impossible" << std::endl
 					<< "int: impossible" << std::endl
@@ -121,6 +126,8 @@ bool	Convert::isInt()
 	i = 0;
 	if (_value[0] == '-')
 		i++;
+	while (_value[i] == '0')
+		i++;
 	if (_value.size() - i > 10 || _value.size() - i <= 0)
 		return false;
 	while (i < _value.size())
@@ -142,8 +149,10 @@ void	Convert::printInt()
 	nb = atoi(_value.c_str());
 	if (nb >= ' ' && nb <= '~')
 		std::cout	<< "char: " << "\'" << static_cast<char>(nb) << "\'" << std::endl;
-	else
+	else if (nb >= 0 && nb <= 127)
 		std::cout	<< "char: Non displayable" << std::endl;
+	else
+		std::cout	<< "char: not in range of char" << std::endl;
 	std::cout	<< "int: " << nb << std::endl
 				<< "float: " << static_cast<float>(nb) << ".0f" << std::endl
 				<< "double: " << static_cast<double>(nb) << ".0" << std::endl;
@@ -190,14 +199,15 @@ void	Convert::printFloat()
 	double	tmp;
 	char	*pEnd;
 	float	 nb;
-	
-	std::cout	<< _value.c_str() << std::endl;
+
 	nb = atof(_value.c_str());
 	tmp = strtod(_value.c_str(), &pEnd);
 	if (nb >= ' ' && nb <= '~')
 		std::cout	<< "char: " << "\'" << static_cast<char>(nb) << "\'" << std::endl;
-	else
+	else if (nb >= 0 && nb <= 127)
 		std::cout	<< "char: Non displayable" << std::endl;
+	else
+		std::cout	<< "char: not in range of char" << std::endl;
 	if (tmp >= INT_MIN && tmp <= 2147483583.0)
 		std::cout	<< "int: " << static_cast<int>(nb) << std::endl;
 	else
@@ -250,9 +260,11 @@ void	Convert::printDouble()
 	
 	nb = strtod(_value.c_str(), &pEnd);
 	if (nb >= ' ' && nb <= '~')
-		std::cout	<< "char: Non displayable" << "\'" << static_cast<char>(nb) << "\'" << std::endl;
+		std::cout	<< "char: " << "\'" << static_cast<char>(nb) << "\'" << std::endl;
+	else if (nb >= 0 && nb <= 127)
+		std::cout	<< "char: Non displayable" << std::endl;
 	else
-		std::cout	<< "char: " << std::endl;
+		std::cout	<< "char: not in range of char" << std::endl;
 	if (nb >= INT_MIN && nb <= INT_MAX)
 		std::cout	<< "int: " << static_cast<int>(nb) << std::endl;
 	else
@@ -270,4 +282,130 @@ void	Convert::printDouble()
 		std::cout	<< "double: " << nb << ".0" << std::endl;
 	else
 		std::cout	<< "double: " << nb << std::endl;
+}
+
+
+
+bool	Convert::isGoodValue()
+{
+	unsigned long	i;
+
+	if (_value.compare("inf") == 0 || _value.compare("inff") == 0 || _value.compare("-inf") == 0 || _value.compare("-inff") == 0 || _value.compare("+inf") == 0 || _value.compare("+inff") == 0 || _value.compare("nan") == 0 || _value.compare("nanf") == 0)
+	{
+		_isSpecial = true;
+		_goodValue = true;
+		return true;
+	}
+	if (_value[_value.size() - 1] == 'f')
+		_value.resize(_value.size() - 1);
+	if (_value.size() == 3 && _value[0] == '\'' && _value[2] == '\'')
+	{
+		_isChar == true;
+		_goodValue = true;
+		return true;
+	}
+	if (_value[i] == '-')
+		i++;
+	while (i < _value.size())
+	{
+		if (!isdigit(_value[i]))
+			break;
+		i++;
+	}
+	if (i != _value.size() && _value[i] != '.')
+	{
+		_goodValue = false;
+		return false;
+	}
+	while (i < _value.size())
+	{
+		if (!isdigit(_value[i]))
+			break;
+		i++;
+	}
+	if (i != _value.size())
+	{
+		_goodValue = false;
+		return false;
+	}
+	_goodValue = true;
+	return true;
+}
+
+void	Convert::feedClass()
+{
+	double	nb;
+	char	c;
+	
+	if (_isSpecial)
+		return ;
+	if (_isChar)
+	{
+		_char = _value[1];
+		_int = static_cast<int>(_char);
+		_float = static_cast<float>(_char);
+		_double = static_cast<double>(_char);
+		return ;
+	}
+	if (_goodValue)
+	{
+		_double = atof(_value.c_str());
+		_char = static_cast<char>(_double);
+		_int = static_cast<int>(_double);
+		_float = static_cast<float>(_double);
+	}
+}
+
+void	Convert::print(std::ostream &stream) const
+{
+	if (_isSpecial)
+	{
+		if (_value.compare("inff") == 0 || _value.compare("inf") == 0)
+			stream	<< "char: impossible" << std::endl
+					<< "int: impossible" << std::endl
+					<< "float: +inff" << std::endl
+					<< "double: +inf" << std::endl;
+		if (_value.compare("-inff") == 0 || _value.compare("-inf") == 0)
+			stream	<< "char: impossible" << std::endl
+					<< "int: impossible" << std::endl
+					<< "float: -inff" << std::endl
+					<< "double: -inf" << std::endl;
+		if (_value.compare("+inff") == 0 || _value.compare("+inf") == 0)
+			stream	<< "char: impossible" << std::endl
+					<< "int: impossible" << std::endl
+					<< "float: +inff" << std::endl
+					<< "double: +inf" << std::endl;
+		if (_value.compare("nanf") == 0 || _value.compare("nan") == 0)
+			stream	<< "char: impossible" << std::endl
+					<< "int: impossible" << std::endl
+					<< "float: nanf" << std::endl
+					<< "double: nan" << std::endl;
+	}
+	else if (_isChar)
+	{
+		stream	<< "char: " << _value << std::endl
+				<< "int: " << _int << std::endl
+				<< "float: " << _float << ".0f" << std::endl
+				<< "double: " << _double << ".0" << std::endl;
+	}
+	else if (_isSpecial)
+	{
+		if (_double >= ' ' && _double <= '~')
+			stream << "char: " << "\'" << _char << "\'" << std::endl;
+		else if (_double >= 0 && _double <= 127)
+			stream << "char: Non displayable" << std::endl;
+		else
+			stream << "char: impossible" << std::endl;
+		if (_double >= INT_MIN && _double <= INT_MAX)
+			stream << "int: " << _int << std::endl;
+		else
+			stream << "int: impossible" << _int << std::endl;
+		if ()
+	}
+}
+
+std::ostream &operator<<(std::ostream &stream, Convert const &convert)
+{
+	convert.print(stream);
+	return stream;
 }
