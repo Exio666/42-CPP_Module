@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 13:33:33 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/07/08 22:32:46 by bsavinel         ###   ########.fr       */
+/*   Created: 2022/07/08 22:32:37 by bsavinel          #+#    #+#             */
+/*   Updated: 2022/07/08 22:33:26 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#include "Base.hpp"
 
-class Base
+Base::~Base()
 {
-	public:
-		virtual ~Base();	
-};
 
-#endif
+}
