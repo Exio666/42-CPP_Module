@@ -6,11 +6,11 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:23:12 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/06 19:34:20 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/09 17:40:54 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Array.tpp"
+#include "Array.hpp"
 #include <iostream>
 #include <string>
 

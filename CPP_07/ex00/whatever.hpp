@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.tpp                                       :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:16:39 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/06 19:37:21 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/09 17:40:16 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_TPP
-# define WHATEVER_TPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
 template <typename T>
 void swap(T &a, T &b)

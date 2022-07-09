@@ -6,11 +6,11 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:16:44 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/06 19:36:18 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/09 17:40:54 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.tpp"
+#include "whatever.hpp"
 #include <iostream>
 
 int main( void )

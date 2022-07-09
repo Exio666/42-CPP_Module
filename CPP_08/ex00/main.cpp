@@ -6,11 +6,11 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 19:48:09 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/07 10:52:32 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/09 17:40:54 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.tpp"
+#include "easyfind.hpp"
 #include <iostream>
 #include <vector>
 #include <set>

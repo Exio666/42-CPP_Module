@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.tpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 19:48:12 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/07 10:52:09 by bsavinel         ###   ########.fr       */
+/*   Created: 2022/06/01 10:30:19 by bsavinel          #+#    #+#             */
+/*   Updated: 2022/07/09 17:40:25 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_TPP
-# define EASYFIND_TPP
-
-#include <iostream>
+#ifndef ITER_HPP
+# define ITER_HPP
 
 template <typename T>
-int easyfind (T container, int nb)
+void iter(T *tab, int size, void (*f)(const T&))
 {
-	typename T::iterator iter;
-	int i = 0;
-
-	for (iter = container.begin(); iter != container.end(); iter++)
+	for (int i = 0; i < size; i++)
 	{
-		if (*iter == nb)
-			return (i);
-		i++;
+		f(tab[i]);
 	}
-	return (-1);
 }
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:34:55 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/13 13:28:23 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/09 17:40:54 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #define CONT stack
 
-#include "MutantStack.tpp"
+#include "MutantStack.hpp"
 #include <iostream>
 
 int main()

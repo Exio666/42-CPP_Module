@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.tpp                                          :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:22:09 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/06 19:34:49 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/09 17:44:59 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_TPP
-# define ARRAY_TPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
 # include <stddef.h>
 # include <exception>

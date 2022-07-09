@@ -6,12 +6,12 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:28:44 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/06/08 16:10:38 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/09 17:42:44 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "iter.tpp"
+#include "iter.hpp"
 
 //! Main correction
 /*class Awesome
@@ -61,7 +61,7 @@ void ft_print(H &s)
     std::cout << s << std::endl;
 }
 
-void up_1(const int &a)
+void print_1(const int &a)
 {
 	std::cout << a << std::endl;
 	return ;
@@ -77,7 +77,7 @@ int main()
 		}
 		std::cout << std::endl;
 
-		iter(tab_int, 8, &up_1);
+		iter(tab_int, 8, &print_1);
 
 		for (int i = 0; i < 8; i++)
 		{
