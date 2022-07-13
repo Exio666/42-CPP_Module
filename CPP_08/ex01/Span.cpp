@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 10:53:59 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/07/07 14:36:55 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/13 10:25:38 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,7 @@ Span	&	Span::operator=(const Span& copy)
 {
 	this->_sizeMax = copy._sizeMax;
 	this->_actualSize = copy._actualSize;
-	for (unsigned int i = 0; i < copy._actualSize; i++)
-	{
-		this->_tab.push_back(copy._tab[i]);
-	}
+	this->_tab = copy._tab;
 	return(*this);
 }
 

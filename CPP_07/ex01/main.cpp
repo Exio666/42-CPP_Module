@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:28:44 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/07/09 17:42:44 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/12 09:43:34 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,18 +86,18 @@ int main()
 		std::cout << std::endl;
 	}
 	{
-		int tab_int[8] = {0, 1, 2 ,3 ,4, 5, 6, 7};
+		double tab_double[8] = {0.25, 1.4, 2.2 ,3.6 ,4.4, 5.22, 6.56, 7.156};
 		for (int i = 0; i < 8; i++)
 		{
-			std::cout << tab_int[i] << " ";
+			std::cout << tab_double[i] << " ";
 		}
 		std::cout << std::endl;
 
-		iter(tab_int, 8, ft_print);
+		iter(tab_double, 8, ft_print);
 
 		for (int i = 0; i < 8; i++)
 		{
-			std::cout << tab_int[i] << " ";
+			std::cout << tab_double[i] << " ";
 		}
 		std::cout << std::endl;
 	}
