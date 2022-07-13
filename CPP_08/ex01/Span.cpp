@@ -6,13 +6,14 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 10:53:59 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/07/13 10:25:38 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/07/13 16:57:18 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <iostream>
 #include <stdlib.h>
+#include <algorithm>
 
 //!------------------------------CONSTRUCTOR----------------------------------
 
@@ -76,54 +77,31 @@ void	Span::addNumber(int nb)
 
 int	Span::shortestSpan()
 {
-	std::vector<int>::iterator	iter;
-	std::vector<int>::iterator	tmp;
-	int							shortest;
-	int							test;
-
+	std::vector<int> copy(_tab);
+	int shortest;
+	
 	if (_actualSize <= 1)
 		throw ImposibleFonction();
-	else
-	{
-		shortest = abs(_tab[0] - _tab[1]);
-		for (iter = _tab.begin(); iter != _tab.end(); iter++)
-		{
-			tmp = iter;
-			if (tmp == _tab.end())
-				return (shortest);
-			tmp++;
-			for (; tmp != _tab.end(); tmp++)
-			{
-				test = abs(*iter - *tmp);
-				if (test < shortest)
-					shortest = test;
-			}
-		}
-		return (shortest);
-	}
-	return (-1);
+	std::sort(copy.begin(), copy.end());
+	shortest = this->longestSpan();
+	for (unsigned long int i = 0; i < _tab.size() - 1; i++)
+		shortest = std::min(shortest, abs(copy[i] - copy[i + 1]));
+	return (shortest);
 }
 
 int	Span::longestSpan()
 {
 	std::vector<int>::iterator	iter;
-	int 						max;
-	int							min;
+	std::vector<int>::iterator	max;
+	std::vector<int>::iterator	min;
 	
 	if (_actualSize <= 1)
 		throw ImposibleFonction();
 	else
 	{
-		min = _tab[0];
-		max = _tab[0];
-		for (iter = _tab.begin(); iter != _tab.end(); iter++)
-		{
-			if (*iter > max)
-				max = *iter;
-			if (*iter < min)
-				min = *iter;
-		}
-		return (max - min);
+		max = std::max_element(_tab.begin(), _tab.end());
+		min = std::min_element(_tab.begin(), _tab.end());
+		return (*max - *min);
 	}
 	return (-1);
 }
